@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚡ Magical Universe ⚡</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at center, #0d0d0f, #000);
+      overflow-x: hidden;
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(120deg, #00ffff55, #0044ff55, #ff00ff55);
+      background-size: 400% 400%;
+      animation: gradientMove 10s infinite alternate;
+      z-index: -1;
+      filter: blur(100px);
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      padding: 2rem;
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.4);
+      box-shadow: 0 0 40px #00ffff44;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px #00ffffaa;
+      letter-spacing: 2px;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffff; }
+      to { text-shadow: 0 0 30px #ff00ff; }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding: 4rem;
+      perspective: 1200px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 20px;
+      transform: rotateY(0deg);
+      cursor: zoom-in;
+      outline: none;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      transition: all 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1) rotateY(12deg);
+      box-shadow: 0 0 40px #00ffffaa, 0 0 80px #ff00ffaa;
+    }
+
+    .gallery img:focus-visible {
+      border: 3px solid #00ffff;
+      transform: scale(1.05) rotateY(-10deg);
+      box-shadow: 0 0 60px #00ffff88;
+    }
+
+    .gallery img::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: skewX(-25deg);
+      transition: 0.7s;
+    }
+
+    .gallery img:hover::before {
+      left: 150%;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+      backdrop-filter: blur(10px);
+    }
+
+    body:hover {
+      background-position: center calc(50% + 5px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>⚡ Magical - Universe ⚡</h1>
+    <p>1 0 1 1 1 0 1 0 0 1 0 1 1 1 0 1 0 0 1 0 1 0 1 1 0</p>
+  </header>
+
+  <main>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Không gian vũ trụ" />
+      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Trí tuệ nhân tạo" />
+      <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38" alt="Thế giới Cyberpunk" />
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Ánh sáng neon" />
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Công nghệ hiện đại" />
+      <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91" alt="Robot tương lai" />
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f" alt="Phi hành gia lạc giữa dải ngân hà" />
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769" alt="Hành tinh xanh" />
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7" alt="Không gian ánh sáng plasma" />
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Magical - Universe</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+      console.log("🚀 TechX Ultra V2 đã sẵn sàng khởi động!");
+      addTabFocus();
+    };
+
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach((img, i) => {
+      img.addEventListener("mouseover", () => {
+        console.log(`🖱️ Hover vào ảnh ${i + 1}: ${img.alt}`);
+      });
+
+      img.addEventListener("mouseleave", () => {
+        console.log(`👋 Rời chuột khỏi ảnh ${i + 1}`);
+      });
+
+      img.addEventListener("focus", () => {
+        console.log(`🎯 Focus ảnh ${i + 1}`);
+        img.style.filter = "drop-shadow(0 0 25px #00ffff)";
+      });
+
+      img.addEventListener("blur", () => {
+        console.log(`💨 Blur ảnh ${i + 1}`);
+        img.style.filter = "none";
+      });
+
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          console.log(`🧠 Enter trên ảnh ${i + 1} – mở fullscreen`);
+          img.requestFullscreen();
+        }
+      });
+    });
+
+    function addTabFocus() {
+      for (let i = 0; i < images.length; i++) {
+        images[i].setAttribute("tabindex", i + 1);
+      }
+      console.log("✅ Tabindex đã thêm cho tất cả hình ảnh.");
+    }
+  </script>
+</body>
+</html>
 
